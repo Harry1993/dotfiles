@@ -1,4 +1,4 @@
-# environment setup
+# Environment setup
 
 Given a fresh Linux...
 
@@ -6,6 +6,7 @@ Given a fresh Linux...
 
 ```
 apt install dnsutils resolvconf
+apt install openssh ufw
 apt install iftop htop
 apt install unrar unzip
 ```
