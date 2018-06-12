@@ -1,0 +1,4 @@
+show-totals: yes
+filter-code: not broadcast
+port-resolution: yes
+port-display: on

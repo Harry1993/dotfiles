@@ -1,0 +1,25 @@
+source "gpg --no-verbose --no-tty --batch --quiet -d ~/.mutt/catmail/passwd.gpg |"
+
+set ssl_starttls=yes
+set ssl_force_tls=yes
+
+set imap_user = 'yman@email.arizona.edu'
+
+set from='yman@email.arizona.edu'
+set realname='Yanmao Man'
+
+set folder = imaps://imap.gmail.com/
+set spoolfile = imaps://imap.gmail.com/INBOX
+set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
+
+set header_cache = "~/.mutt/catmail/cache/headers"
+set message_cachedir = "~/.mutt/catmail/cache/bodies"
+set certificate_file = "~/.mutt/catmail/certificates"
+
+set smtp_url = 'smtp://yman@email.arizona.edu@smtp.gmail.com:587/'
+
+set move = no
+set imap_keepalive = 900
+set editor = 'vim'
+
+set sort = reverse-date-received

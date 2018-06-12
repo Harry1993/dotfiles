@@ -1,0 +1,28 @@
+# Folder hooks
+folder-hook 'account.catmail' 'source ~/.mutt/catmail/catmailrc'
+folder-hook 'account.gmail' 'source ~/.mutt/gmail/gmailrc'
+folder-hook 'account.ece175' 'source ~/.mutt/ece175/ece175rc'
+
+# Default account
+source ~/.mutt/catmail/catmailrc
+
+# Macros for switching accounts
+macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/catmail/catmailrc<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/gmail/gmailrc<enter><change-folder>!<enter>'
+macro index <f4> '<sync-mailbox><enter-command>source ~/.mutt/ece175/ece175rc<enter><change-folder>!<enter>'
+
+# Fetch mail shortcut
+bind index G imap-fetch-mail
+
+# Fetch every 5 seconds
+set timeout=5
+
+# Use the threaded view
+set sort=threads
+#set sort_browser=date
+set sort_aux=reverse-last-date-received
+
+set alias_file=~/.mutt/aliases
+#set sort_alias=alias
+#set reverse_alias=yes
+source $alias_file

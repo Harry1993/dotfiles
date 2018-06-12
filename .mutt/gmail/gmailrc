@@ -1,0 +1,22 @@
+source "gpg -d ~/.mutt/gmail/passwd.gpg |"
+
+set ssl_starttls=yes
+set ssl_force_tls=yes
+
+set imap_user = 'dlut.manym@gmail.com'
+
+set from='dlut.manym@gmail.com'
+set realname='Yanmao Man'
+
+set folder = imaps://imap.gmail.com/
+set spoolfile = imaps://imap.gmail.com/INBOX
+set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
+
+set header_cache = "~/.mutt/gmail/cache/headers"
+set message_cachedir = "~/.mutt/gmail/cache/bodies"
+set certificate_file = "~/.mutt/gmail/certificates"
+
+set smtp_url = 'smtps://dlut.manym@smtp.gmail.com:465/'
+
+set move = no
+set imap_keepalive = 900

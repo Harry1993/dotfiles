@@ -1,0 +1,7 @@
+# vim:ft=perl:fenc=utf-8
+
+sub on_user_command {
+    my ($self, $cmd) = @_;
+    my $output = `dynamic-colors cycle`;
+    $self->cmd_parse($output);
+}
