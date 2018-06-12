@@ -30,5 +30,5 @@ apt install chromium-browser git wget
 * network monitor: iftop
 * process monitor: htop
 * remap-keys: xmodmap
-* media player: mpv, vlc
-* downloader: aria2, wget
+* media player: mpv
+* downloader: aria2
