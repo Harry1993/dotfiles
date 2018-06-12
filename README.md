@@ -32,3 +32,7 @@ apt install chromium-browser git wget
 * remap-keys: `xmodmap`
 * media player: `mpv`
 * downloader: `aria2`
+
+## btw
+
+[This](http://tutos.readthedocs.io/en/latest/source/Arch.html) is a nice tutorial for a fresh Arch Linux.
