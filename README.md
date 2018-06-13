@@ -24,7 +24,8 @@ apt install chromium-browser git wget
 * terminal emulator: `rxvt-unicode`
 * terminal multiplexer: `tmux`
 * text editor: `vim`
-* shell: `oh-my-zsh`: follow [this](https://gist.github.com/tsabat/1498393#file-zsh-md)
+* shell: `oh-my-zsh`: follow
+  [this](https://gist.github.com/tsabat/1498393#file-zsh-md)
 * emailing: `mutt`
 * pdf viewer: `zathura`
 * network monitor: `iftop`
@@ -35,4 +36,5 @@ apt install chromium-browser git wget
 
 ## btw
 
-[This](http://tutos.readthedocs.io/en/latest/source/Arch.html) is a nice tutorial for a fresh Arch Linux.
+[This](http://tutos.readthedocs.io/en/latest/source/Arch.html) is a nice
+tutorial for a fresh Arch Linux.
