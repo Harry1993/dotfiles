@@ -1,11 +1,11 @@
 !pointer = 1 2 3 5 4 6 7 8 9 10 11 12
 
-clear      lock 
-clear   control
-clear      mod4
-keycode      37 = Super_L
-keycode      66 = Control_L
-keycode      133 = Caps_Lock
-add     control = Control_L Control_R
-add     mod4 = Caps_Lock
-add        mod4 = Super_L Super_R
+clear		lock 
+clear		control
+clear		mod4
+keycode		37 = Super_L
+keycode		66 = Control_L
+keycode		133 = Caps_Lock
+add			control = Control_L Control_R
+add			mod4 = Caps_Lock
+add			mod4 = Super_L Super_R
