@@ -157,19 +157,28 @@ filetype plugin indent on    " required
 "
 set runtimepath+=~/.vim/bundle/YouCompleteMe
 
-" syntax enable
-" colorscheme solarized
-
-if has('gui_running')
-	set background=light
-else
+""" colorscheme settings
+syntax enable
+colorscheme desert
+let g:solarized_termcolors=256
+let g:solarized_termtrans=0 
+func SetColor_dark()
 	set background=dark
-endif
+	colorscheme solarized
+endfunc
+func SetColor_light()
+	set background=light
+	colorscheme solarized
+endfunc
+func SetColor_desert()
+	set background=dark
+	colorscheme desert
+endfunc
+map <F6> :call SetColor_desert()<CR>
+map <F7> :call SetColor_dark()<CR>
+map <F8> :call SetColor_light()<CR>
 
-" vim-latex-live-preview settings
-"autocmd Filetype tex setl updatetime=1
-let g:livepreview_previewer = 'zathura'
-
+""" compilation settings
 func C()
     exec "w | !gcc % && ./a.out"
 endfunc
@@ -186,3 +195,8 @@ autocmd FileType c map <C-e> :call C()<CR>
 autocmd FileType python map <C-e> :call Python()<CR>
 autocmd FileType tex map <C-e> :call Latex()<CR><CR>
 autocmd FileType sh map <C-e> :call Bash()<CR>
+
+"vim-latex-live-preview settings
+"autocmd Filetype tex setl updatetime=1
+"let g:livepreview_previewer = 'zathura'
+
