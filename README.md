@@ -11,6 +11,9 @@ apt install iftop htop
 apt install unrar unzip
 ```
 
+Go [here](https://gist.github.com/rogerleite/99819) to install monaco font.
+Go [here](https://www.dropbox.com/install-linux) to install Dropbox.
+
 ## bases
 
 ```
