@@ -5,14 +5,16 @@ Given a fresh Linux...
 ## utilities
 
 ```
-apt install dnsutils resolvconf sshfs
+apt install dnsutils resolvconf
 apt install alsa-utils pulseaudio-utils pulseaudio
-apt install openssh ufw
+apt install openssh ufw sshfs
 apt install iftop htop
 apt install unrar unzip
 ```
 
-Go [here](https://gist.github.com/rogerleite/99819) to install `monaco font`.
+Go [here](https://www.google.com/get/noto/) to download some `Google Noto
+fonts`.  Follow [this](https://gist.github.com/rogerleite/99819) to install
+them. 
 
 Go [here](https://www.dropbox.com/install-linux) to install `Dropbox`.
 
