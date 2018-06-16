@@ -29,6 +29,7 @@ apt install scrot imagemagick
 ## apps
 
 * window manager: `i3`
+* status bar: `polybar` or `i3pystatus`
 * terminal emulator: `rxvt-unicode`
 * terminal multiplexer: `tmux`
 * text editor: `vim`
