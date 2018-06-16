@@ -5,20 +5,23 @@ Given a fresh Linux...
 ## utilities
 
 ```
-apt install dnsutils resolvconf xinit
+apt install dnsutils resolvconf sshfs
+apt install alsa-utils pulseaudio-utils pulseaudio
 apt install openssh ufw
 apt install iftop htop
 apt install unrar unzip
 ```
 
-Go [here](https://gist.github.com/rogerleite/99819) to install monaco font.
-Go [here](https://www.dropbox.com/install-linux) to install Dropbox.
+Go [here](https://gist.github.com/rogerleite/99819) to install `monaco font`.
+
+Go [here](https://www.dropbox.com/install-linux) to install `Dropbox`.
 
 ## bases
 
 ```
 apt install python3 python3-pip ipython3
 apt install chromium-browser git wget
+apt install scrot imagemagick
 ```
 
 ## apps
