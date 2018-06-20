@@ -1,6 +1,6 @@
 # Environment setup
 
-Given a fresh Linux...
+Given a fresh Debian/Ubuntu...
 
 ## utilities
 
