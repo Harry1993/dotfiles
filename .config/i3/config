@@ -151,14 +151,17 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-# bar {
-#         status_command i3status
-#         status_command python3 $HOME/.config/i3/statusbar.py # i3pystatus supports network throughput monitoring
-#         tray_output primary
-# }
+bar {
+		# i3pystatus supports network throughput monitoring
+        status_command python3 $HOME/.config/i3/statusbar.py
+		position top
+		workspace_buttons yes
+#		status_command i3status
+#		tray_output primary
+}
 
 # Use polybar, instead
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # disable titlebar
 for_window [class="^.*"] border pixel 1

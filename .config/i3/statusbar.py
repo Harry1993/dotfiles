@@ -62,7 +62,7 @@ status.register("load")
 #
 # Note: the network module requires PyPI package netifaces
 status.register("network",
-    interface="eno1",
+    interface="enp0s31f6",
     format_up="{v4} ▲:{bytes_sent} ▼:{bytes_recv}",)
 
 # Note: requires both netifaces and basiciw (for essid and quality)
@@ -73,15 +73,23 @@ status.register("network",
 # Shows disk usage of /
 # Format:
 # 42/128G [86G]
-#status.register("disk",
-#    path="/",
-#    format="{used}/{total}G [{avail}G]",)
+status.register("disk",
+    path="/",
+    format="{used}/{total}G [{avail}G]",)
 
 # Shows pulseaudio default sink volume
 #
 # Note: requires libpulseaudio from PyPI
-#status.register("pulseaudio",
-#    format="♪{volume}",)
+status.register("pulseaudio",
+    format="♪{volume}",)
+
+#status.register("alsa",
+#        on_leftclick = ["switch_mute"],
+#        # or as a strings without the list
+#        on_upscroll = "decrease_volume",
+#        on_downscroll = "increase_volume",
+#        # this will refresh any module by clicking on it
+#        on_rightclick = "run",)
 
 # Shows mpd status
 # Format:
