@@ -41,6 +41,7 @@ apt install scrot imagemagick
 * process monitor: `htop`
 * remap-keys: `xmodmap`
 * media player: `mpv`
+* music player: `cmus`
 * downloader: `aria2`
 
 ## btw
