@@ -1,7 +1,10 @@
 from i3pystatus import Status
 from i3pystatus.weather import weathercom
 from i3pystatus.calendar import google
+from i3pystatus.mail import imap
 
+from get_gpw import gkey
+from get_cpw import ckey
 
 status = Status(logfile='/home/yman/var/i3pystatus.log')
 
@@ -12,23 +15,12 @@ status.register("load")
 status.register("temp")
 
 status.register("network",
-    interface="enp0s31f6",
+    interface="eno1",
     format_up="{v4} ▲:{bytes_sent} ▼:{bytes_recv}",)
 
 status.register("disk",
     path="/",
     format="{avail}G",)
-
-# Shows mpd status
-# Format:
-# Cloud connected▶Reroute to Remain
-#status.register("mpd",
-#    format="{title}{status}{album}",
-#    status={
-#        "pause": "▷",
-#        "play": "▶",
-#        "stop": "◾",
-#    },)
 
 status.register(
     'weather',
@@ -63,6 +55,34 @@ status.register("cmus",
     format="{status} {song_elapsed} {title}")
 
 status.register("pulseaudio",
-    format="♪{volume}",)
+    format="♪{volume}")
+
+status.register("mail",
+    email_client="/usr/bin/mutt",
+    format="Gmail: {unread} new email",
+    format_plural="Gmail: {unread} new emails",
+    backends=[imap.IMAP(
+        host='imap.gmail.com',
+        username='dlut.manym',
+        keyring_backend=gkey,
+        account='dlut.manym@gmail.com')])
+
+status.register("mail",
+    email_client="/usr/bin/mutt",
+    format="Catmail: {unread} new email",
+    format_plural="Catmail: {unread} new emails",
+    backends=[imap.IMAP(
+        host='imap.gmail.com',
+        username='yman@email.arizona.edu',
+        keyring_backend=ckey,
+        account='yman@email.arizona.edu@gmail.com')])
+
+#status.register("openvpn",
+#    vpn_name='Windscribe-US-West')
+
+#status.register("shell",
+#    command="/usr/bin/dig +short myip.opendns.com @resolver1.opendns.com")
+
+#status.register("net_speed")
 
 status.run()

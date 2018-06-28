@@ -153,7 +153,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # finds out, if available)
 bar {
 		# i3pystatus supports network throughput monitoring
-        status_command python3 $HOME/.config/i3/statusbar.py
+		status_command python3 $HOME/.config/i3/statusbar.py
 		position top
 		workspace_buttons yes
 #		status_command i3status
