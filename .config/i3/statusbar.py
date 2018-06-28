@@ -3,6 +3,8 @@ from i3pystatus.weather import weathercom
 from i3pystatus.calendar import google
 from i3pystatus.mail import imap
 
+# check out i3pystatus.core.settings.get_setting_from_keyring()
+# for implementing a keyring ourselves
 from get_gpw import gkey
 from get_cpw import ckey
 
