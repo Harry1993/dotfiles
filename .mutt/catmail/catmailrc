@@ -1,4 +1,4 @@
-source "gpg --no-verbose --no-tty --batch --quiet -d ~/.mutt/catmail/passwd.gpg |"
+source "gpg -d ~/.mutt/catmail/passwd.gpg |"
 
 set ssl_starttls=yes
 set ssl_force_tls=yes
