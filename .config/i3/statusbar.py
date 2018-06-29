@@ -17,8 +17,14 @@ status.register("load")
 status.register("temp")
 
 status.register("network",
-    interface="eno1",
-    format_up="{v4} ▲:{bytes_sent} ▼:{bytes_recv}",)
+    interface="enp0s31f6",
+    format_up="▲:{bytes_sent} ▼:{bytes_recv}",)
+
+status.register("shell",
+    command="/usr/bin/dig +short myip.opendns.com @resolver1.opendns.com")
+
+status.register("openvpn",
+    vpn_name='Windscribe-US-West')
 
 status.register("disk",
     path="/",
@@ -67,6 +73,7 @@ status.register("mail",
         host='imap.gmail.com',
         username='dlut.manym',
         keyring_backend=gkey,
+        mailbox="[Gmail]/Important",
         account='dlut.manym@gmail.com')])
 
 status.register("mail",
@@ -78,12 +85,6 @@ status.register("mail",
         username='yman@email.arizona.edu',
         keyring_backend=ckey,
         account='yman@email.arizona.edu@gmail.com')])
-
-#status.register("openvpn",
-#    vpn_name='Windscribe-US-West')
-
-#status.register("shell",
-#    command="/usr/bin/dig +short myip.opendns.com @resolver1.opendns.com")
 
 #status.register("net_speed")
 
