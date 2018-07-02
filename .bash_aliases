@@ -1,10 +1,10 @@
-
 # shortcuts
 alias xm='python ~/Dropbox/toolkit/iScript/xiami.py'
 alias fuck="thefuck"
 alias chr='chromium-browser&'
 alias def='~/bin/translate-shell/translate :zh-TW'
 alias matlab="/usr/local/MATLAB/R2017a/bin/matlab -nosplash -nodisplay"
+alias ace-eng="/home/yman/opt/acestream/start-engine --client-console"
 
 # mimic commands on macOS
 alias open="xdg-open > /dev/null 2>&1"
@@ -20,7 +20,7 @@ alias lp="lp -o sides=two-sided-long-edge"
 # convert ps to pdf in standalone
 alias ps2pdf='ps2pdf -dEPSCrop'
 
-# use trash instead of rm for unintended deletion
+# overwrite rm to prevent unintended deletion
 alias rm='gio trash'
 
 # Google Calendar (gcalcli)
