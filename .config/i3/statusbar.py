@@ -11,28 +11,37 @@ from get_cpw import ckey
 status = Status(logfile='/home/yman/var/i3pystatus.log')
 
 status.register("clock",
-    format="%D %a %I:%M %p",)
+    format="📆 %D %a 🕒 %I:%M %p",)
 
-status.register("load")
-status.register("temp")
+status.register("cpu_usage",
+    format="🔥 {usage:02}%")
+status.register("temp",
+    format="🌡️ {temp} °C")
+status.register("mem",
+    format="🐏 {percent_used_mem}%")
+
+status.register("shell",
+    command="/usr/bin/dig +short myip.opendns.com @resolver1.opendns.com",
+    format="📶 {output}")
 
 status.register("network",
     interface="enp0s31f6",
-    format_up="▲:{bytes_sent} ▼:{bytes_recv}",)
-
-status.register("shell",
-    command="/usr/bin/dig +short myip.opendns.com @resolver1.opendns.com")
+    format_up="{bytes_sent} ⇅ {bytes_recv}",)
 
 status.register("openvpn",
-    vpn_name='Windscribe-US-West')
+    vpn_name='Windscribe-US-West',
+    format='🔞🈲 {status}',
+    status_down='down',
+    status_up='up')
 
 status.register("disk",
     path="/",
-    format="{avail}G",)
+    format="💽 {avail}G",)
 
 status.register(
     'weather',
-    format='{condition} {current_temp}{temp_unit}[ {update_error}]',
+    format='{icon} {current_temp}{temp_unit}[ {update_error}]',
+    color_icons={'Sunny': '🏖️'},
     interval=900,
     colorize=True,
     hints={'markup': 'pango'},
@@ -44,7 +53,7 @@ status.register(
 )
 
 status.register("calendar",
-    format="{title}",
+    format="📅 {title}",
     update_interval=10,
     urgent_blink=True,
     backend=google.Google(
@@ -52,7 +61,7 @@ status.register("calendar",
         days=2))
 
 status.register("calendar",
-    format="{title}",
+    format="📅 {title}",
     update_interval=10,
     urgent_blink=True,
     backend=google.Google(
@@ -60,14 +69,15 @@ status.register("calendar",
         days=2))
 
 status.register("cmus",
-    format="{status} {song_elapsed} {title}")
+    format="🎵 {status} {song_elapsed} {title}",
+    format_not_running="")
 
 status.register("pulseaudio",
-    format="♪{volume}")
+    format="🔉{volume}")
 
 status.register("mail",
     email_client="/usr/bin/mutt",
-    format="Gmail: {unread} new email",
+    format="📨 Gmail: {unread} new email",
     format_plural="Gmail: {unread} new emails",
     backends=[imap.IMAP(
         host='imap.gmail.com',
@@ -78,7 +88,7 @@ status.register("mail",
 
 status.register("mail",
     email_client="/usr/bin/mutt",
-    format="Catmail: {unread} new email",
+    format="📨 Catmail: {unread} new email",
     format_plural="Catmail: {unread} new emails",
     backends=[imap.IMAP(
         host='imap.gmail.com',
