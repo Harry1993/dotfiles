@@ -11,7 +11,7 @@ from get_cpw import ckey
 status = Status(logfile='/home/yman/var/i3pystatus.log')
 
 status.register("clock",
-    format="%a %-d %b %H:%M",)
+    format="%D %a %I:%M %p",)
 
 status.register("load")
 status.register("temp")
