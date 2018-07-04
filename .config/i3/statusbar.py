@@ -11,7 +11,7 @@ from get_cpw import ckey
 status = Status(logfile='/home/yman/var/i3pystatus.log')
 
 status.register("clock",
-    format="%a %-d %b %X",)
+    format="%a %-d %b %H:%M",)
 
 status.register("load")
 status.register("temp")
@@ -44,7 +44,7 @@ status.register(
 )
 
 status.register("calendar",
-    format="{title} {remaining}",
+    format="{title}",
     update_interval=10,
     urgent_blink=True,
     backend=google.Google(
@@ -52,7 +52,7 @@ status.register("calendar",
         days=2))
 
 status.register("calendar",
-    format="{title} {remaining}",
+    format="{title}",
     update_interval=10,
     urgent_blink=True,
     backend=google.Google(
