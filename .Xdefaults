@@ -47,8 +47,8 @@ urxvt.dynamicColors: on
 urxvt.perl-ext-common: default,resize-font,urxvt-colors
 
 ! font settings
-urxvt.font: xft:Monaco:pixelsize=16
-urxvt.boldFont: xft:Monaco:pixelsize=16:weight=bold
+urxvt.font: xft:Monaco:pixelsize=24
+urxvt.boldFont: xft:Monaco:pixelsize=24:weight=bold
 URxvt.letterSpace: -1
 
 ! disable the shitty scrollbar

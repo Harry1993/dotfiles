@@ -22,7 +22,7 @@ status.register("mem",
 
 status.register("shell",
     command="/usr/bin/dig +short myip.opendns.com @resolver1.opendns.com",
-    format="📶 {output}")
+    format="🌐 {output}")
 
 status.register("network",
     interface="enp0s31f6",
@@ -38,10 +38,12 @@ status.register("disk",
     path="/",
     format="💽 {avail}G",)
 
-status.register(
-    'weather',
+status.register('weather',
     format='{icon} {current_temp}{temp_unit}[ {update_error}]',
-    color_icons={'Sunny': '🏖️'},
+    color_icons={'Sunny': '🏖️',
+                 'Rainy': '☔',
+                 'Partly Cloudy': '⛅',
+                 'Cloudy': '☁️'},
     interval=900,
     colorize=True,
     hints={'markup': 'pango'},
@@ -69,11 +71,11 @@ status.register("calendar",
         days=2))
 
 status.register("cmus",
-    format="🎵 {status} {song_elapsed} {title}",
+    format="🎵 {song_elapsed} {title}",
     format_not_running="")
 
 status.register("pulseaudio",
-    format="🔉{volume}")
+    format="🔉 {volume}")
 
 status.register("mail",
     email_client="/usr/bin/mutt",
