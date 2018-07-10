@@ -39,7 +39,7 @@ status.register("disk",
     format="💽 {avail}G",)
 
 status.register('weather',
-    format='{condition} {current_temp}{temp_unit}[ {update_error}]',
+    format='😂 {condition} {current_temp}{temp_unit}[ {update_error}] 💦 {humidity}%',
     interval=900,
     colorize=True,
     hints={'markup': 'pango'},
