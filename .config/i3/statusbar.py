@@ -14,7 +14,7 @@ status.register("clock",
     format="📆 %D %a 🕒 %I:%M %p",)
 
 status.register("cpu_usage",
-    format="🔥 {usage:02}%")
+    format="🔥 {usage}%")
 status.register("temp",
     format="🌡️ {temp} °C")
 status.register("mem",
@@ -39,16 +39,13 @@ status.register("disk",
     format="💽 {avail}G",)
 
 status.register('weather',
-    format='{icon} {current_temp}{temp_unit}[ {update_error}]',
-    color_icons={'Sunny': '🏖️',
-                 'Rainy': '☔',
-                 'Partly Cloudy': '⛅',
-                 'Cloudy': '☁️'},
+    format='{condition} {current_temp}{temp_unit}[ {update_error}]',
     interval=900,
     colorize=True,
     hints={'markup': 'pango'},
     backend=weathercom.Weathercom(
-        location_code='USAZ0247:1:US', # Tucson, AZ
+        location_code='85721:4:US', # UofA
+        #location_code='85704:4:US', # Apt
         units='imperial',
         update_error='<span color="#ff0000">!</span>',
     ),
