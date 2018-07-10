@@ -132,12 +132,13 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-		# i3pystatus supports network throughput monitoring
-		status_command python3 $HOME/.config/i3/statusbar.py
-		position top
-		workspace_buttons yes
-#		status_command i3status
-#		tray_output primary
+	# i3pystatus supports network throughput monitoring
+	status_command python3 $HOME/.config/i3/statusbar.py
+	position top
+	workspace_buttons yes
+	font pango:noto 12
+#	status_command i3status
+#	tray_output primary
 }
 
 # Use polybar instead
@@ -177,7 +178,7 @@ workspace 10 output HDMI-1
 exec --no-startup-id xrandr --output HDMI-1 --auto --right-of DP-2
 # Load key remappings
 exec --no-startup-id xmodmap ~/.Xmodmap
-# Increase mouse movement speed
+# Increase mouse movement speed, thanks to https://askubuntu.com/a/876273
 exec --no-startup-id xinput --set-prop 10 283 1.0
 # Run Dropbox
 exec --no-startup-id dropbox start
