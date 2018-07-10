@@ -89,6 +89,12 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+# Resize without prefix
+bindsym $mod+Shift+h resize shrink width 10 px or 10 ppt
+bindsym $mod+Shift+k resize grow height 10 px or 10 ppt
+bindsym $mod+Shift+j resize shrink height 10 px or 10 ppt
+bindsym $mod+Shift+l resize grow width 10 px or 10 ppt
+
 # focus the child container
 #bindsym $mod+d focus child
 
@@ -134,7 +140,7 @@ bar {
 #		tray_output primary
 }
 
-# Use polybar, instead
+# Use polybar instead
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # disable titlebar
@@ -148,9 +154,6 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 bindsym $mod+b exec --no-startup-id cmus-remote --next
 bindsym $mod+c exec --no-startup-id cmus-remote --pause
 bindsym $mod+z exec --no-startup-id cmus-remote --prev
-
-# Run Dropbox
-exec --no-startup-id dropbox start
 
 # Screenshot
 bindsym Print --release exec "scrot -s /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
@@ -170,12 +173,11 @@ workspace 8 output HDMI-1
 workspace 9 output HDMI-1
 workspace 10 output HDMI-1
 
-# Resize without prefix
-bindsym $mod+Shift+h resize shrink width 10 px or 10 ppt
-bindsym $mod+Shift+k resize grow height 10 px or 10 ppt
-bindsym $mod+Shift+j resize shrink height 10 px or 10 ppt
-bindsym $mod+Shift+l resize grow width 10 px or 10 ppt
-
+# arrange monitors positions
+exec --no-startup-id xrandr --output HDMI-1 --auto --right-of DP-2
 # Load key remappings
 exec --no-startup-id xmodmap ~/.Xmodmap
-exec --no-startup-id xrandr --output HDMI-1 --auto --right-of DP-2
+# Increase mouse movement speed
+exec --no-startup-id xinput --set-prop 10 283 1.0
+# Run Dropbox
+exec --no-startup-id dropbox start
