@@ -7,7 +7,7 @@
 
 SRC="/" #dont forget trailing slash!
 SNAP="/mnt/backup"
-OPTS="-rltgoiaAXv --delay-updates --delete --chmod=a-w --exclude-from=/home/yman/.script/rsex.txt --info=progress2"
+OPTS="-rltgoiaAXv --delay-updates --delete --chmod=a-w --exclude-from=$HOME/.scripts/rsex.txt --info=progress2"
 MINCHANGES=20
 
 # run this process with real low priority

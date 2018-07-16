@@ -11,5 +11,5 @@
 /home/*/.cache/chromium/
 /home/*/.local/share/Trash/
 /home/*/.ACEStream/
-/home/*/VirtualBox\ VMs/
 /home/*/Downloads/
+/home/*/VirtualBox\ VMs/
