@@ -1,5 +1,4 @@
-PROMPT=$'
-%{$fg[blue]%}${PWD/#$HOME/~}%{$reset_color%} %{$fg[green]%}[%n@%m]%{$reset_color%}
+PROMPT=$'%{$fg[blue]%}${PWD/#$HOME/~}%{$reset_color%} %{$fg[green]%}[%n@%m]%{$reset_color%}
 %{$fg_bold[red]%}>%{$reset_color%} '
 
 PROMPT2="%{$fg_blod[black]%}%_> %{$reset_color%}"
