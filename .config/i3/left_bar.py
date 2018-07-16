@@ -10,8 +10,8 @@ from get_cpw import ckey
 
 status = Status(logfile='/home/yman/var/i3pystatus.log')
 
-#status.register("clock",
-#    format="📆 %D %a 🕒 %I:%M %p",)
+status.register("clock",
+    format="📆 %D %a 🕒 %I:%M %p",)
 
 status.register("cpu_usage",
     format="🔥 {usage}%")
