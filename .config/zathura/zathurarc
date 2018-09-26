@@ -4,13 +4,15 @@
 set window-height 850 
 set window-width 1300
 set adjust-open width
-set show-scrollbars true
+set show-scrollbars false
 set first-page-column 2
 set window-title-basename true
 set database sqlite
 set recolor-keephue
 set selection-clipboard clipboard
 
+map [normal] = zoom in
+map [fullscreen] = zoom in
 
 # key bindings
 # map <C-[> abort # Still doesn't work :(

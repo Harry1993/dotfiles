@@ -3,6 +3,8 @@ from i3pystatus.weather import weathercom
 from i3pystatus.calendar import google
 from i3pystatus.mail import imap
 
+import logging
+
 # check out i3pystatus.core.settings.get_setting_from_keyring()
 # for implementing a keyring ourselves
 from get_gpw import gkey
@@ -14,7 +16,7 @@ status.register("clock",
     format="📆 %D %a 🕒 %I:%M %p",)
 
 status.register('weather',
-    format='😂 {condition} {current_temp}{temp_unit}[ {update_error}] 💦 {humidity}%',
+    format='🌈 {condition} {current_temp}{temp_unit}[ {update_error}] 💦 {humidity}%',
     interval=900,
     colorize=True,
     hints={'markup': 'pango'},
@@ -23,6 +25,7 @@ status.register('weather',
         #location_code='85704:4:US', # Apt
         units='imperial',
         update_error='<span color="#ff0000">!</span>',
+        log_level=logging.DEBUG,
     ),
 )
 

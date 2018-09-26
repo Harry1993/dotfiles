@@ -130,19 +130,19 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 bar {
-	status_command python3 $HOME/.config/i3/left_bar.py
+	status_command python3 $HOME/.config/i3/right_bar.py
 	position top
 	workspace_buttons yes
-	font pango:noto 12
+	font pango:noto sans 12
 	output DP-2
 	tray_output DP-2
 }
 
 bar {
-	status_command python3 $HOME/.config/i3/right_bar.py
+	status_command python3 $HOME/.config/i3/left_bar.py
 	position top
 	workspace_buttons yes
-	font pango:noto 12
+	font pango:noto sans 12
 	output HDMI-1
 	tray_output none
 }
@@ -181,10 +181,10 @@ workspace 9 output HDMI-1
 workspace 10 output HDMI-1
 
 # arrange monitors positions
-exec --no-startup-id xrandr --output HDMI-1 --auto --right-of DP-2
+exec --no-startup-id xrandr --output HDMI-1 --auto --right-of DP-2 --rotate left
 # Load key remappings
 exec --no-startup-id xmodmap ~/.Xmodmap
 # Increase mouse movement speed, thanks to https://askubuntu.com/a/876273
-exec --no-startup-id xinput --set-prop 10 283 1.0
+exec --no-startup-id xinput set-prop 12 285 1.0
 # Run Dropbox
 exec --no-startup-id dropbox start
