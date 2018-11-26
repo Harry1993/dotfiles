@@ -186,15 +186,19 @@ func Python()
     exec "w | !python3 %"
 endfunc
 func Latex()
-    exec "w | !latexmk -pdf % && latexmk -c"
+    exec "w | !latexmk --shell-escape -pdf % && latexmk -c"
 endfunc
 func Bash()
     exec "w | !bash %"
+endfunc
+func Arduino()
+    exec "w | !arduino --upload % --port /dev/ttyACM0"
 endfunc
 autocmd FileType c map <C-e> :call C()<CR>
 autocmd FileType python map <C-e> :call Python()<CR>
 autocmd FileType tex map <C-e> :call Latex()<CR><CR>
 autocmd FileType sh map <C-e> :call Bash()<CR>
+autocmd FileType arduino map <C-e> :call Arduino()<CR>
 
 "vim-latex-live-preview settings
 "autocmd Filetype tex setl updatetime=1

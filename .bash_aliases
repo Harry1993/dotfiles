@@ -6,6 +6,7 @@ alias def='~/bin/translate-shell/translate :zh-TW'
 alias matlab="/usr/local/MATLAB/R2017a/bin/matlab -nosplash -nodisplay"
 alias ace-eng="/home/yman/opt/acestream/start-engine --client-console"
 alias ios="sudo systemctl start usbmuxd.service"
+alias dc="docker-compose"
 
 alias df="df -H"
 
