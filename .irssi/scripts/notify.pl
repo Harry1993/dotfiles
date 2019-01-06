@@ -1,67 +1,40 @@
+# See http://www.leemhuis.info/files/fnotify/fnotify
+# for the script that this one is originated from.
+
 use strict;
 use warnings;
 use vars qw($VERSION %IRSSI);
 use Irssi;
 
-$VERSION = '0.0.6';
+$VERSION = '0.0.7';
 %IRSSI = (
-	name => 'fnotify',
+	name => 'notify',
 	authors => 'Tyler Abair, Thorsten Leemhuis, James Shubin' .
-               ', Serge van Ginderachter',
+               ', Serge van Ginderachter, Yanmao Man',
 	contact => 'fedora@leemhuis.info, serge@vanginderachter.be',
-	description => 'Write notifications to a file in a consistent format.',
+	description => 'Send IFTTT notifications',
 	license => 'GNU General Public License',
-	url => 'http://www.leemhuis.info/files/fnotify/fnotify https://ttboj.wordpress.com/',
+	url => 'https://github.com/Harry1993/dotfiles/blob/master/.irssi/scripts/notify.pl',
 );
 
 #
 #	README
 #
 # To use:
-# $ cp fnotify.pl ~/.irssi/scripts/fnotify.pl
+# $ put this script under ~/.irssi/scripts/
 # irssi> /load perl
-# irssi> /script load fnotify
-# irssi> /set fnotify_ignore_hilight 0 # ignore hilights of priority 0
-#
-
-#
-#	AUTHORS
-#
-# Ignore hilighted messages with priority = fnotify_ignore_hilight
-# version: 0.0.6
-# Tyler Abair <tyler.abair@gmail.com>
-#
-# Strip non-parsed left over codes (Bitlbee otr messages)
-# version: 0.0.5
-# Serge van Ginderachter <serge@vanginderachter.be>
-#
-# Consistent output formatting by James Shubin:
-# version: 0.0.4
-# https://ttboj.wordpress.com/
-# note: changed license back to original GPL from Thorsten Leemhuis (svg)
-#
-# Modified from the Thorsten Leemhuis <fedora@leemhuis.info>
-# version: 0.0.3
-# http://www.leemhuis.info/files/fnotify/fnotify
-#
-# In parts based on knotify.pl 0.1.1 by Hugo Haas:
-# http://larve.net/people/hugo/2005/01/knotify.pl
-#
-# Which is based on osd.pl 0.3.3 by Jeroen Coekaerts, Koenraad Heijlen:
-# http://www.irssi.org/scripts/scripts/osd.pl
-#
-# Other parts based on notify.pl from Luke Macken:
-# http://fedora.feedjack.org/user/918/
+# irssi> /script load notify.pl
+# irssi> /set notify_ignore_hilight 0 # ignore hilights of priority 0
 #
 
 my %config;
 
-Irssi::settings_add_int('fnotify', 'fnotify_ignore_hilight' => -1);
-$config{'ignore_hilight'} = Irssi::settings_get_int('fnotify_ignore_hilight');
+Irssi::settings_add_int('notify', 'notify_ignore_hilight' => -1);
+$config{'ignore_hilight'} = Irssi::settings_get_int('notify_ignore_hilight');
 
 Irssi::signal_add(
     'setup changed' => sub {
-        $config{'ignore_hilight'} = Irssi::settings_get_int('fnotify_ignore_hilight');
+        $config{'ignore_hilight'} = Irssi::settings_get_int('notify_ignore_hilight');
     }
 );
 

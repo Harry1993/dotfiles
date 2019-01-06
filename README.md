@@ -44,6 +44,7 @@ apt install scrot imagemagick
 * media player: `mpv`
 * music player: `cmus`
 * downloader: `aria2`
+* IRC client: `irssi`
 
 ## btw
 
