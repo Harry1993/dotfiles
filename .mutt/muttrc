@@ -26,3 +26,9 @@ set alias_file=~/.mutt/aliases
 #set sort_alias=alias
 #set reverse_alias=yes
 source $alias_file
+
+set trash='+Trash'
+set trash='imaps://imap.gmail.com/[Gmail]/Trash'
+bind index D purge-message
+
+auto_view text/html
