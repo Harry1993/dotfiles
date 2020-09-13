@@ -134,8 +134,8 @@ bar {
 	position top
 	workspace_buttons yes
 	font pango:noto sans 12
-	output DP-2
-	tray_output DP-2
+	output HDMI-1
+	tray_output HDMI-1
 }
 
 bar {
@@ -143,7 +143,7 @@ bar {
 	position top
 	workspace_buttons yes
 	font pango:noto sans 12
-	output HDMI-1
+	output DP-2
 	tray_output none
 }
 
@@ -181,10 +181,12 @@ workspace 9 output HDMI-1
 workspace 10 output HDMI-1
 
 # arrange monitors positions
-exec --no-startup-id xrandr --output HDMI-1 --auto --right-of DP-2 --rotate left
+exec --no-startup-id xrandr --output DP-2 --auto --left-of HDMI-1 --rotate left
 # Load key remappings
 exec --no-startup-id xmodmap ~/.Xmodmap
 # Increase mouse movement speed, thanks to https://askubuntu.com/a/876273
 exec --no-startup-id xinput set-prop 12 285 1.0
 # Run Dropbox
 exec --no-startup-id dropbox start
+# composer for zoom meeting annotations
+exec --no-startup-id xcompmgr -c -l0 -t0 -r0 -o.00
