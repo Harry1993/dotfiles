@@ -35,6 +35,8 @@ set trash='+Trash'
 set trash='imaps://imap.gmail.com/[Gmail]/Trash'
 bind index D purge-message
 
+# https://reversed.top/2014-07-22/prefer-plain-text-format-over-html-in-mutt/
 auto_view text/html
+alternative_order text/plain text/html
 
 set imap_idle=yes
