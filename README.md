@@ -17,7 +17,7 @@ fonts`. Then follow [this](https://gist.github.com/rogerleite/99819) to install
 them. For Arch Linux: the pacakge names are `noto-fonts`, `noto-fonts-cjk` and
 `noto-fonts-emoji`.
 
-~~~Go [here](https://www.dropbox.com/install-linux) to install `Dropbox`.~~~
+~~Go [here](https://www.dropbox.com/install-linux) to install `Dropbox`.~~
 Screw Dropbox, use `rclone`:
 
 ```
@@ -35,7 +35,7 @@ apt install scrot imagemagick
 ## apps
 
 * window manager: `i3`
-* status bar: ~~~`polybar` or~~~`i3pystatus`
+* status bar: ~~`polybar` or~~`i3pystatus`
 * terminal emulator: `rxvt-unicode-256color`
 * terminal multiplexer: `tmux`
 * text editor: `vim`
