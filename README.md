@@ -10,14 +10,19 @@ apt install alsa-utils pulseaudio-utils pulseaudio
 apt install openssh ufw sshfs
 apt install iftop htop
 apt install unrar unzip
-apt install fonts-noto
 ```
 
 Go [here](https://www.google.com/get/noto/) to download some `Google Noto
 fonts`. Then follow [this](https://gist.github.com/rogerleite/99819) to install
-them.
+them. For Arch Linux: the pacakge names are `noto-fonts`, `noto-fonts-cjk` and
+`noto-fonts-emoji`.
 
-Go [here](https://www.dropbox.com/install-linux) to install `Dropbox`.
+~~~Go [here](https://www.dropbox.com/install-linux) to install `Dropbox`.~~~
+Screw Dropbox, use `rclone`:
+
+```
+> rclone sync --exclude-from ~/Dropbox/.rcloneignore -P --dry-run ~/Dropbox dropbox:/
+```
 
 ## bases
 
@@ -30,7 +35,7 @@ apt install scrot imagemagick
 ## apps
 
 * window manager: `i3`
-* status bar: `polybar` or `i3pystatus`
+* status bar: ~~~`polybar` or~~~`i3pystatus`
 * terminal emulator: `rxvt-unicode-256color`
 * terminal multiplexer: `tmux`
 * text editor: `vim`
